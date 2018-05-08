@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="rootPane" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoosePolynomialController">
+   <children>
+       <Label fx:id="textAbove" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="137.0" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      <ListView fx:id="listOfPolynomials" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="115.0" />
+      <Label contentDisplay="CENTER" text="Choose folder for reports" textAlignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin></Label>
+      <Label fx:id="pathDisplay" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="5.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#browseButtonPressed" text="Browse" />
+      <Label fx:id="info" textFill="#f20606">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="108.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#backButtonPressed" text="Back">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#continueButtonPressed" text="Continue" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

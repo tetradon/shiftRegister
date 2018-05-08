@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ShiftRegisterController">
+   <children>
+   
+             <Label fx:id="polynomialInfoDisplay" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="188.0" text="Polynomial">
+         <padding>
+            <Insets bottom="10.0" />
+         </padding></Label>
+      <Label fx:id="theoreticPeriodDisplay" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="195.0" text="Period (T) =" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" />
+         </padding></Label>
+      <Label fx:id="theoreticHammingWeightDisplay" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="225.0" text="Hamming Weight = " textAlignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="113.0" text="Matrix F" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" />
+         </padding></Label>
+      <GridPane fx:id="matrixDisplay" alignment="CENTER" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin></GridPane>
+      <Label text="Initial state Y[0]">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin></Label>
+       <GridPane fx:id="initialStateDisplay" alignment="CENTER" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin></GridPane>
+      <Label fx:id="initialStateError" text="Please enter valid values" textFill="#f50505" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+       <Label text="Current state Y[i]" />
+       <GridPane fx:id="currentStateDisplay" alignment="CENTER" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" />
+      <GridPane alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="175.0" />
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="125.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Pseudorandom number" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label fx:id="decimalNumberDisplay" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="88.0" text="Current step [i]" textAlignment="CENTER" GridPane.halignment="RIGHT" />
+            <Label fx:id="currentPeriodDisplay" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
+            <Label alignment="CENTER" contentDisplay="TOP" text="Hamming weight " textAlignment="CENTER" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Label fx:id="currentHammingWeightDisplay" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
+         </children>
+      </GridPane>
+      <GridPane alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Manual Control" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Slider fx:id="slider" blockIncrement="1.0" majorTickUnit="10.0" min="1.0" minorTickCount="1" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="186.0" showTickMarks="true" value="50.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <Button fx:id="startButton" mnemonicParsing="false" onAction="#startAutoButtonPressed" prefHeight="25.0" prefWidth="60.0" text="Start" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="stopButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#stopAutoButtonPressed" prefHeight="25.0" prefWidth="60.0" text="Stop" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="nextStateButton" lineSpacing="1.0" mnemonicParsing="false" onAction="#nextState" prefHeight="36.0" prefWidth="76.0" text="Next state" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
+            <Label text="Auto Control" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>
