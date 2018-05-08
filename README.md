@@ -8,7 +8,7 @@ First of all users should choose polynomial that will describe the structure of 
   
   oct - octal representation of polynomials
   
-  letter - and last letter is means that it's primitive polynomial) 
+  letter - some information about the polynomial (for example A, B, C, D means that it's primitive polynomial)  
 
 After choosing of polynomial user can model the shift in a manual or auto mode, after reaching period (when initial state will be equal to current) text report will be created with all information about modeling.
 
